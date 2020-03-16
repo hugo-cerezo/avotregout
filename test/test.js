@@ -1,14 +1,13 @@
 $(document).ready(function () {
 
     $('#but').click(function () {
-        
+
         $.ajax({
-            url: "api.php",
+            url: "testinsert.php",
             method: "post",
-            data: { login: "Canard" },
             success: function (res) {
-                console.log("[" + res + "]");
-                $("#show").html(res);
+                $("#main").empty();
+                $("#main").append(res);
             }
         });
     });
