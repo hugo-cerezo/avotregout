@@ -1,4 +1,4 @@
-$(document).ready(function())
+$(document).ready(function()
 {
     //quand la page a finis de chargée on execute cette fonction
     $('#button').click(function() {
@@ -13,10 +13,10 @@ $(document).ready(function())
             url: "api.php",//ou je vais le chercher
             method: "post",//comment
             data: info,//json
-            success: function(resultat){//quand j'ai reusit je fait quoi ? resultat retourne la valeulrs du success
+            success: function(resultat){//quax  nd j'ai reusit je fait quoi ? resultat retourne la valeulrs du success
                 console.log('['+resultat+']');//affiche dans la console le contenu de success stoker dans var resultat
                 $('#show').html(resultat);//afiche vardump venant de php
             }
         });
     });
-});
+}); 
