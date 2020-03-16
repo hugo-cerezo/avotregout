@@ -4,7 +4,7 @@ function inscription($login,$password,$email)
 {
     if (isset($_POST['inscription']))
     {
-        $conn = mysqli_connect("localhost","root","","#");
+        $conn = mysqli_connect("2176253.admin.sd3.gpaas.net","root","",);
         $requestins = 'INSERT INTO utilisateurs (`id`,`login`,`password`,`email`) VALUES (NULL,'".$_POST["login"]."','".password_hash($_POST["mdp"],PASSWORD_BCRYPT)."','".$_POST["email"]."')';
         mysqli_query($conn, $requestins);
 
