@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/acceuil.js"></script>
+    <script async src="js/acceuil.js"></script>
     
 
 </head>
