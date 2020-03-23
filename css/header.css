@@ -1,0 +1,9 @@
+div{
+    border: solid 1px black;
+    width:25%;
+    height: 100px;  
+
+}
+header{
+  display:flex;
+}

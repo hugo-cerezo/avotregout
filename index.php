@@ -5,73 +5,17 @@
     <meta charset="utf-8">
     <title>Titre de la page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <script async src="js/acceuil.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/acceuil.js"></script>
     
 
 </head>
 
-<body>
+<body id='body'>
 
-    <header>
-
-      <div id="HomePage">
-        <p>acceuil</p>
-      </div>
-
-      <div id="homeParticulier">
-        <p>Particulier</p>
-      </div>
-
-      <div id="HomePro">
-        <p>pro</p>
-      </div>
-
-      <div id="HomeEvent">
-        <p>event</p>
-      </div>
-
-      <div id="HomeGalerie">
-        <p>galerie</p>
-      </div>
-
-    </header>
-    <main id='main'>
-    <aricle>
-      <div id='acceuil1'>
-        
-      </div>
-    </aricle>   
-    <aricle>
-      <div id='acceuil2'>
-        <p>pro</p>
-      </div>
-    </aricle>
-    <aricle>
-    <div id='acceuil3'>
-            <p>event</p>
-          </div>
-    </aricle>
-    <aricle>
-    <div id='acceuil4'>
-            <p>galerie photo</p>
-          </div>
-    </aricle>
-    <style>
-        div{
-            border: solid 1px black;
-            width:25%;
-            height: 100px;  
-
-        }
-        header{
-          display:flex;
-        }
-    </style>
-    </main>
-    <footer>
-      
-    </footer>
+    
 </body>
 
 </html>

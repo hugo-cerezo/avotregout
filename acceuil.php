@@ -1,5 +1,5 @@
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <script async src="acceuil.js"></script>
+  <main id='main'>
+      
     <aricle>
       <div id='acceuil1'>
         
@@ -28,3 +28,7 @@
 
         }
     </style>
+    </main>
+    <footer>
+      
+    </footer>

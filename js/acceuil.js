@@ -1,5 +1,17 @@
 $(document).ready(function () {
     //header
+    $('#HomePage').click(function () {
+
+        $.ajax({
+            url: "index.php",
+            method: "post",
+            success: function (res) {
+                $("#body").empty();
+                $("#body").append(res);
+                console.log(res);
+            }
+        });
+    });
     $('#homeParticulier').click(function () {
 
         $.ajax({
