@@ -1,0 +1,21 @@
+body{
+  margin:0;
+  padding:0;
+}
+div{
+    border: solid 1px black;
+    width:25%;
+    height: 100px;  
+
+}
+header{
+  display:flex;
+}
+#mainMenu{
+  z-index: 2;
+  display:none
+}
+#mainBase{
+  z-index: 1;
+  display: block;
+}

@@ -45,14 +45,7 @@
               <p>Retrouvez moi au chiringuito aux miles tout les jours bla bla</p>
           </div>
     </aricle>
-    <style>
-        div{
-            border: solid 1px black;
-            width:25%;
-            height: auto;  
 
-        }
-    </style>
     </main>
     <footer>
       
