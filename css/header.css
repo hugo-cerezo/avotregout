@@ -1,7 +1,11 @@
+body{
+  margin:0;
+  padding:0;
+}
 div{
     border: solid 1px black;
     width:25%;
-    height: 100px;  
+    height: auto;  
 
 }
 header{
