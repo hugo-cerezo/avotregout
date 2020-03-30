@@ -33,16 +33,6 @@ $(document).ready(function () {
             }
         });
     });
-    $('#partiart4').click(function () {
-
-        $.ajax({
-            url: "particulier-article4.php",
-            method: "post",
-            success: function (res) {
-                $("#main").empty();
-                $("#main").append(res);
-            }
-        });
-    });
+    
 
 });

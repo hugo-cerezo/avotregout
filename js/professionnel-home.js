@@ -33,16 +33,6 @@ $(document).ready(function () {
             }
         });
     });
-    $('#proart4').click(function () {
 
-        $.ajax({
-            url: "professionnel-article4.php",
-            method: "post",
-            success: function (res) {
-                $("#main").empty();
-                $("#main").append(res);
-            }
-        });
-    });
 
 });

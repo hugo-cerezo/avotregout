@@ -37,7 +37,7 @@ $(document).ready(function () {
     $('#HomeEvent').click(function () {
 
         $.ajax({
-            url: "createurs-home.php",
+            url: "createurs-article.php",
             method: "post",
             success: function (res) {
                 $("#main").empty();
@@ -82,7 +82,7 @@ $(document).ready(function () {
     $('#acceuil3').click(function () {
 
         $.ajax({
-            url: "createurs-home.php",
+            url: "createurs-article.php",
             method: "post",
             success: function (res) {
                 $("#main").empty();
