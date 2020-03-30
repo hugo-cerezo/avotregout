@@ -87,6 +87,7 @@ $(document).ready(function () {
             success: function (res) {
                 $("#main").empty();
                 $("#main").append(res);
+                console.log(res)
             }
         });
     });
@@ -94,6 +95,17 @@ $(document).ready(function () {
 
         $.ajax({
             url: "galerie.php",
+            method: "post",
+            success: function (res) {
+                $("#main").empty();
+                $("#main").append(res);
+            }
+        });
+    });
+    $('#acceuil5').click(function () {
+
+        $.ajax({
+            url: "devis.php",
             method: "post",
             success: function (res) {
                 $("#main").empty();

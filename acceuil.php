@@ -33,7 +33,7 @@
     <article>
     <div id='acceuilCommande'>
             <h2>Vous souhaitez passer une commande ?</h2>
-            <h3>BLABLA lien vers page devis</h3>
+            <a href="#" id="acceuil5">devis</a><!-- ajout bouton devis -->
           </div>
     </article>
     <article>
