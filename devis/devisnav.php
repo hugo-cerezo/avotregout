@@ -1,7 +1,4 @@
-<!-- reste a faire -->
-<!-- utilisateur connecté ?si non envoie vers creation compte -->
-<!-- formulaire avant affichage page:nbpersonne,date,service,boisson... -->
-<!-- je sais pas -->
+
 <div class='choixcategorie'>
     <div id='tapas'>
         <p>tapas/</p>
