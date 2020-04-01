@@ -15,12 +15,14 @@ if (isset($_SESSION['login'])){
             /* creation table pour devis */
             $createTable = 'CREATE TABLE Devis_"'.$_SESSION['login'].'" (
             id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            firstname VARCHAR(30) NOT NULL,
-            lastname VARCHAR(30) NOT NULL,
-            email VARCHAR(50),)' ;
-            $query =mysqli_query($conn, $createTable);
-            $requestvalues = 'INSERT INTO Devis_"'.$_SESSION['login'].'" VALUES () ';
-            $_SESSION['pannier']= true ;
+            categorie varchar(255) NOT NULL,
+            produits varchar(255) NOT NULL,
+            prix int(255) NOT NULL,
+            qtt int(255) NOT NULL,
+
+            )' ;
+            //faire n condition pour boisson/service/materiel 18 conditoon au total
+            $_SESSION['values']= $_POST['nombrepersonne']+$_POST['date']+$_POST['boisson']+$_POST['service']+$_POST['materiel'];
         }
     }
 }
