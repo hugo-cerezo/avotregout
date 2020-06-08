@@ -2,7 +2,9 @@
 session_start();
 include('class.php');
 $_SESSION['user'] = new user;
-// var_dump($_SESSION['user']->getUserData());
+$sql = "SELECT * FROM articles WHERE cat = 'news' AND start <= NOW() AND end >= NOW()";
+$result = $_SESSION["user"]->connectBdd()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+var_dump($result);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,12 +22,12 @@ $_SESSION['user'] = new user;
 <body>
 
     <button id="accueil" class="btn btn-light">Accueil</button>
+    <button id="contact" class="navLink btn btn-light">Contact</button>
     <!-- <nav class="mb-4">
         <button id="apero" class="navLink btn btn-light">Apero</button>
         <button id="brunchs" class="navLink btn btn-light">Brunchs</button>
         <button id="buffets" class="navLink btn btn-light">Buffets</button>
         <button id="evenements" class="navLink btn btn-light">Créateur d'évenements</button>
-        <button id="contact" class="navLink btn btn-light">Contact</button>
     </nav> -->
 
     <main id="main">
