@@ -2,9 +2,7 @@
 session_start();
 include('class.php');
 $_SESSION['user'] = new user;
-$sql = "SELECT * FROM articles WHERE cat = 'news' AND start <= NOW() AND end >= NOW()";
-$result = $_SESSION["user"]->connectBdd()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-var_dump($result);
+$result = $_SESSION['user']->getNews();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -67,8 +65,8 @@ var_dump($result);
                         <div class="col">
                             <h6>News Facebook</h6>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <h6>News Admin</h6>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h6><?php if ($result != null) { echo $result[0]['title']; } else { echo 'News'; } ?></h6>
+                            <p class="card-text"><?php if ($result != null) { echo $result[0]['text']; } else { echo 'Aucune nouvelle'; } ?></p>
                         </div>
                     </div>
                 </div>

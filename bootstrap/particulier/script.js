@@ -44,7 +44,7 @@ $(document).ready(() => {
                                             url: 'updateView.php',
                                             type: 'POST',
                                             data: { orderUp: arr },
-                                            success: (data) => {
+                                            success: () => {
                                                 render();
                                             }
                                         })
@@ -61,7 +61,7 @@ $(document).ready(() => {
                                             url: 'updateView.php',
                                             type: 'POST',
                                             data: { orderUp: arr },
-                                            success: (data) => {
+                                            success: () => {
                                                 render();
                                             }
                                         })
@@ -78,7 +78,7 @@ $(document).ready(() => {
                                             url: 'updateView.php',
                                             type: 'POST',
                                             data: { content: arr },
-                                            success: (data) => {
+                                            success: () => {
                                                 render();
                                             }
                                         })
@@ -95,8 +95,7 @@ $(document).ready(() => {
                                             url: 'removeArticle.php',
                                             type: 'POST',
                                             data: { 'id': id },
-                                            success: (data) => {
-                                                console.log(data);
+                                            success: () => {
                                                 render();
                                             }
                                         })
@@ -117,8 +116,7 @@ $(document).ready(() => {
                                             url: 'addArticle.php',
                                             type: 'POST',
                                             data: { content: arr },
-                                            success: (data) => {
-                                                console.log(data);
+                                            success: () => {
                                                 render();
                                             }
                                         })
@@ -132,7 +130,6 @@ $(document).ready(() => {
                         });
                     }
                     render();
-
                 });
             }
         })
@@ -175,7 +172,7 @@ $(document).ready(() => {
                                 url: 'updateView.php',
                                 type: 'POST',
                                 data: { orderUp: arr },
-                                success: (data) => {
+                                success: () => {
                                     render();
                                 }
                             })
@@ -192,7 +189,7 @@ $(document).ready(() => {
                                 url: 'updateView.php',
                                 type: 'POST',
                                 data: { orderUp: arr },
-                                success: (data) => {
+                                success: () => {
                                     render();
                                 }
                             })
@@ -209,7 +206,7 @@ $(document).ready(() => {
                                 url: 'updateView.php',
                                 type: 'POST',
                                 data: { content: arr },
-                                success: (data) => {
+                                success: () => {
                                     render();
                                 }
                             })
@@ -226,8 +223,7 @@ $(document).ready(() => {
                                 url: 'removeArticle.php',
                                 type: 'POST',
                                 data: { 'id': id },
-                                success: (data) => {
-                                    console.log(data);
+                                success: () => {
                                     render();
                                 }
                             })
@@ -248,8 +244,7 @@ $(document).ready(() => {
                                 url: 'addArticle.php',
                                 type: 'POST',
                                 data: { content: arr },
-                                success: (data) => {
-                                    console.log(data);
+                                success: () => {
                                     render();
                                 }
                             })

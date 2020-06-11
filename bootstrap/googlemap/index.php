@@ -19,7 +19,6 @@
     // failed.", it means you probably did not give permission for the browser to
     // locate you.
     var map, infoWindow;
-
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
@@ -28,34 +27,12 @@
             },
             zoom: 9
         });
-
-        markerB = new google.maps.Marker({
-            map: map,
-            draggable: false,
-            animation: google.maps.Animation.DROP,
-            position: {
-                lat: 43.259120,
-                lng: 5.570815
-            }
-        });
-        // infoWindow = new google.maps.InfoWindow;
-        // Try HTML5 geolocation.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                console.log(pos["lat"]);
-                marker = new google.maps.Marker({
-                    map: map,
-                    draggable: false,
-                    animation: google.maps.Animation.DROP,
-                    position: {
-                        lat: pos["lat"],
-                        lng: pos["lng"]
-                    }
-                });
                 let a = {
                     'lat': 43.259120 * Math.PI / 180,
                     'lng': 5.570815 * Math.PI / 180
@@ -65,20 +42,36 @@
                     'lng': pos["lng"] * Math.PI / 180
                 }
                 let Sab = Math.acos(Math.sin(a["lat"]) * Math.sin(b["lat"]) + Math.cos(a["lat"]) * Math.cos(b["lat"]) * Math.cos(b["lng"] - a["lng"]))
-                console.log(Sab * 6378137);
-                var Circle = new google.maps.Circle({
-                    strokeColor: '#32CD32',
-                    strokeOpacity: 0.5,
-                    strokeWeight: 2,
-                    fillColor: '#32CD32',
-                    fillOpacity: 0.2,
-                    map: map,
-                    center: {
-                        lat: 43.259120,
-                        lng: 5.570815
-                    },
-                    radius: 100000,
-                });
+                // console.log(Sab * 6378137);
+                if (Sab * 6378137 <= 100000) {
+                    var Circle = new google.maps.Circle({
+                        strokeColor: '#32CD32',
+                        strokeOpacity: 0.5,
+                        strokeWeight: 2,
+                        fillColor: '#32CD32',
+                        fillOpacity: 0.2,
+                        map: map,
+                        center: {
+                            lat: 43.259120,
+                            lng: 5.570815
+                        },
+                        radius: 100000,
+                    });
+                } else {
+                    var Circle = new google.maps.Circle({
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.5,
+                        strokeWeight: 2,
+                        fillColor: '#32CD32',
+                        fillOpacity: 0.2,
+                        map: map,
+                        center: {
+                            lat: 43.259120,
+                            lng: 5.570815
+                        },
+                        radius: 100000,
+                    });
+                }
 
                 // infoWindow.setPosition(pos);
                 // infoWindow.setContent('Vous êtes ici.');

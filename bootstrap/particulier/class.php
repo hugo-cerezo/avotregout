@@ -12,7 +12,7 @@ class user
     public function connectBdd()
     {
         $conn = new PDO("mysql:host=localhost;dbname=avotregout;charset=utf8", "root", "");
-        return $conn ;
+        return $conn;
     }
     public function getUserData()
     {
@@ -41,6 +41,13 @@ class user
         } else {
             echo 'merci de vous connectez';
         }
+    }
+
+    public function getNews()
+    {
+        $sql = "SELECT * FROM articles WHERE cat = 'news' AND start <= NOW() AND end >= NOW()";
+        $result = $this->connectBdd()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
     public function disconnect()
     {
@@ -95,4 +102,3 @@ class user
         }
     }
 }
-?>

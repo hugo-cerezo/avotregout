@@ -7,11 +7,8 @@ session_start();
     $sql = "SELECT DISTINCT cat FROM articles";
     $result = $_SESSION["user"]->connectBdd()->query($sql)->fetchAll();
     foreach ($result as $key => $value) {
-        if ($value["cat"] != "Contact" && $value["cat"] != "Evenements") {
+        if ($value["cat"] != "Contact" && $value["cat"] != "Evenements" && $value["cat"] != 'News') {
     ?>
-            <!-- <article id="<?php echo $value['cat']; ?>" class="col-4 mb-4 navLink" style="cursor:pointer;">
-                <?php //echo $value["cat"]; //?>
-            </article> -->
             <div id="<?php echo $value['cat']; ?>" class="col mb-4 navLink" style="cursor:pointer;">
                 <div class="card h-100">
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
