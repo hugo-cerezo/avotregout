@@ -172,7 +172,7 @@ $result = $_SESSION['user']->getNews();
         ga('require', 'outboundLinkTracker');
         ga('require', 'urlChangeTracker');
         // ...
-        ga('set', 'page', '/index.html');
+        // ga('set', 'page', '/index.html');
         ga('send', 'pageview');
     </script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
