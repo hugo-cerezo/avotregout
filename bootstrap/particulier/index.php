@@ -176,7 +176,7 @@ $result = $_SESSION['user']->getNews();
         ga('send', 'pageview');
     </script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script async src="../autotrack/autotrack.js"></script>
+    <script async src="autotrack/autotrack.js"></script>
     <script src="script.js"></script>
 </body>
 
