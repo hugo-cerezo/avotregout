@@ -1,10 +1,9 @@
 <?php
 include('class.php');
 session_start();
-$conn = new PDO("mysql:host=localhost;dbname=avotregout;charset=utf8", "root", "");
 $cat = $_GET["cat"];
 $sql = "SELECT * FROM `articles` WHERE cat = '$cat' ORDER BY page_order";
-$result = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$result = $_SESSION["user"]->connectBDD()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 foreach ($result as $article) {
     if ($_SESSION['user']->getRank() == "admin") {
         if ($article["page_order"] == 1) {

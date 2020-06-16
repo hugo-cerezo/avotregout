@@ -21,14 +21,8 @@ $result = $_SESSION['user']->getNews();
 
     <button id="accueil" class="btn btn-light">Accueil</button>
     <button id="contact" class="navLink btn btn-light">Contact</button>
-    <!-- <nav class="mb-4">
-        <button id="apero" class="navLink btn btn-light">Apero</button>
-        <button id="brunchs" class="navLink btn btn-light">Brunchs</button>
-        <button id="buffets" class="navLink btn btn-light">Buffets</button>
-        <button id="evenements" class="navLink btn btn-light">Créateur d'évenements</button>
-    </nav> -->
 
-    <main id="main">
+    <main id="main" class="container">
         <section class="d-flex p-3">
             <div class="col mb-4 landing" style="cursor:pointer;">
                 <div class="card h-100">
@@ -65,8 +59,16 @@ $result = $_SESSION['user']->getNews();
                         <div class="col">
                             <h6>News Facebook</h6>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <h6><?php if ($result != null) { echo $result[0]['title']; } else { echo 'News'; } ?></h6>
-                            <p class="card-text"><?php if ($result != null) { echo $result[0]['text']; } else { echo 'Aucune nouvelle'; } ?></p>
+                            <h6><?php if ($result != null) {
+                                    echo $result[0]['title'];
+                                } else {
+                                    echo 'News';
+                                } ?></h6>
+                            <p class="card-text"><?php if ($result != null) {
+                                                        echo $result[0]['text'];
+                                                    } else {
+                                                        echo 'Aucune nouvelle';
+                                                    } ?></p>
                         </div>
                     </div>
                 </div>
@@ -97,31 +99,22 @@ $result = $_SESSION['user']->getNews();
     </main>
     <div id="map" class="my-5"></div>
     <footer class="page-footer font-small blue pt-4">
-
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
-
             <!-- Grid row -->
             <div class="row">
-
                 <!-- Grid column -->
                 <div class="col-md-6 mt-md-0 mt-3">
-
                     <!-- Content -->
                     <h5 class="text-uppercase">Footer Content</h5>
                     <p>Here you can use rows and columns to organize your footer content.</p>
-
                 </div>
                 <!-- Grid column -->
-
                 <hr class="clearfix w-100 d-md-none pb-3">
-
                 <!-- Grid column -->
                 <div class="col-md-3 mb-md-0 mb-3">
-
                     <!-- Links -->
                     <h5 class="text-uppercase">Links</h5>
-
                     <ul class="list-unstyled">
                         <li>
                             <a href="#!">Link 1</a>
@@ -136,16 +129,11 @@ $result = $_SESSION['user']->getNews();
                             <a href="#!">Link 4</a>
                         </li>
                     </ul>
-
                 </div>
                 <!-- Grid column -->
-
-                <!-- Grid column -->
                 <div class="col-md-3 mb-md-0 mb-3">
-
                     <!-- Links -->
                     <h5 class="text-uppercase">Links</h5>
-
                     <ul class="list-unstyled">
                         <li>
                             <a href="#!">Link 1</a>
@@ -160,23 +148,35 @@ $result = $_SESSION['user']->getNews();
                             <a href="#!">Link 4</a>
                         </li>
                     </ul>
-
                 </div>
                 <!-- Grid column -->
-
             </div>
             <!-- Grid row -->
-
         </div>
         <!-- Footer Links -->
-
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
-
     </footer>
+    <script>
+        window.ga = window.ga || function() {
+            (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l = +new Date;
+        ga('create', 'UA-169617593-1', 'auto');
+
+        // Replace the following lines with the plugins you want to use.
+        ga('require', 'eventTracker');
+        ga('require', 'outboundLinkTracker');
+        ga('require', 'urlChangeTracker');
+        // ...
+
+        ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <script async src="../autotrack/autotrack.js"></script>
     <script src="script.js"></script>
 </body>
 

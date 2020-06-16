@@ -17,6 +17,8 @@ $(document).ready(() => {
                             success: (data) => {
                                 $('#main').empty();
                                 $('#main').append(data);
+                                $('#main').append('<button id="addArticle" class="btn btn-light">Ajouter un article</button>');
+                                // Ajout d'article
                                 $('.editLink').click(function () {
                                     $(this).siblings().each(function () {
                                         let text = $(this).text();
@@ -101,8 +103,6 @@ $(document).ready(() => {
                                         })
                                     })
                                 });
-                                $('#main').append('<button id="addArticle" class="btn btn-light">Ajouter un article</button>');
-                                // Ajout d'article
                                 $("#addArticle").click(function () {
                                     $('#addArticle').remove();
                                     $('#main').append('<div id="newArticle"><h5>Titre</h5><div style="border: 1px solid black" class="contentEditable mb-5" name="newTitle" id="newTitle" contentEditable></div><h5>Texte</h5><div style="border: 1px solid black" class="contentEditable mb-5" name="newText" id="newText" contentEditable></div><button class="addNewArticle btn btn-light">Ajouter</button><button class="editCancel btn btn-light">Annuler</button></div>');
@@ -260,9 +260,7 @@ $(document).ready(() => {
         render();
 
     });
-
     $('#accueil').click(function () {
         location.reload();
     })
-
 });
