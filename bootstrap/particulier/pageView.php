@@ -37,3 +37,4 @@ foreach ($result as $article) {
 if ($cat == 'contact') {
     include('contact.php');
 }
+?>

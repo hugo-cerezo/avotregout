@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    // Gestion des vue
     $('.landing').click(function () {
         $.ajax({
             url: 'grid.php',
@@ -126,14 +127,17 @@ $(document).ready(() => {
                                         render();
                                     })
                                 });
+                                gtag('config', 'UA-169617593-2', { 'page_path': '/' + cat + '.html' });
                             }
                         });
                     }
                     render();
                 });
+                gtag('config', 'UA-169617593-2', { 'page_path': '/grid.html' });
             }
         })
-    })
+    });
+    // Gestion contact
     $('.navLink').click(function () {
         cat = $(this).attr("id");
         $('#main').empty();
@@ -145,6 +149,7 @@ $(document).ready(() => {
                 success: (data) => {
                     $('#main').empty();
                     $('#main').append(data);
+
                     $('.editLink').click(function () {
                         $(this).siblings().each(function () {
                             let text = $(this).text();
@@ -251,13 +256,14 @@ $(document).ready(() => {
                             render();
                         })
                     });
+                    gtag('config', 'UA-169617593-2', { 'page_path': '/' + cat + '.html' });
                 }
             });
         }
         render();
-
     });
+    // Gestion button accueil
     $('#accueil').click(function () {
         location.reload();
-    })
+    });
 });

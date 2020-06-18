@@ -6,7 +6,7 @@ class user
     public $email = "admin@admin.com";
     public $phone = "0123456789";
     public $adress = "42 rue du JavaScript";
-    public $rank = "user";
+    public $rank = "admin";
     public $connectState = true;
 
     public function connectBdd()

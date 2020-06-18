@@ -8,6 +8,19 @@ $result = $_SESSION['user']->getNews();
 <html lang="fr">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169617593-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-169617593-2', {'page_path': '/index.html'});
+    </script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +31,6 @@ $result = $_SESSION['user']->getNews();
 </head>
 
 <body>
-
     <button id="accueil" class="btn btn-light">Accueil</button>
     <button id="contact" class="navLink btn btn-light">Contact</button>
 
@@ -160,23 +172,6 @@ $result = $_SESSION['user']->getNews();
         </div>
         <!-- Copyright -->
     </footer>
-    <script>
-        window.ga = window.ga || function() {
-            (ga.q = ga.q || []).push(arguments)
-        };
-        ga.l = +new Date;
-        ga('create', 'UA-169617593-1', 'auto');
-
-        // Replace the following lines with the plugins you want to use.
-        ga('require', 'eventTracker');
-        ga('require', 'outboundLinkTracker');
-        ga('require', 'urlChangeTracker');
-        // ...
-        // ga('set', 'page', '/index.html');
-        ga('send', 'pageview');
-    </script>
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script async src="autotrack/autotrack.js"></script>
     <script src="script.js"></script>
 </body>
 
