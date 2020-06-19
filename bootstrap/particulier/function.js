@@ -6,12 +6,6 @@ function render() {
         success: (data) => {
             $('#main').empty();
             $('#main').append(data);
-
-            // A FAIRE 
-            // if ($_SESSION["user"]->getRank()=='admin'){
-            // $('#main').append('<button id="addArticle" class="btn btn-light">Ajouter un article</button>');
-            // A FAIRE
-
             // Ajout d'article
             $('.editLink').click(function () {
                 $(this).siblings().each(function () {
