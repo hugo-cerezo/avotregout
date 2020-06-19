@@ -18,7 +18,9 @@ $result = $_SESSION['user']->getNews();
         }
         gtag('js', new Date());
 
-        gtag('config', 'UA-169617593-2', {'page_path': '/index.html'});
+        gtag('config', 'UA-169617593-2', {
+            'page_path': '/index.html'
+        });
     </script>
 
     <!-- Required meta tags -->
@@ -71,16 +73,7 @@ $result = $_SESSION['user']->getNews();
                         <div class="col">
                             <h6>News Facebook</h6>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <h6><?php if ($result != null) {
-                                    echo $result[0]['title'];
-                                } else {
-                                    echo 'News';
-                                } ?></h6>
-                            <p class="card-text"><?php if ($result != null) {
-                                                        echo $result[0]['text'];
-                                                    } else {
-                                                        echo 'Aucune nouvelle';
-                                                    } ?></p>
+                            <?php include('news.php'); ?>
                         </div>
                     </div>
                 </div>
@@ -172,6 +165,7 @@ $result = $_SESSION['user']->getNews();
         </div>
         <!-- Copyright -->
     </footer>
+    <script src="function.js"></script>
     <script src="script.js"></script>
 </body>
 
