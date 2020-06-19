@@ -36,7 +36,7 @@ $result = $_SESSION['user']->getNews();
     <button id="accueil" class="btn btn-light">Accueil</button>
     <button id="contact" class="navLink btn btn-light">Contact</button>
 
-    <main id="main" class="container">
+    <main id="main" class="container" style="min-height: 65vh;">
         <section class="d-flex p-3">
             <div class="col mb-4 landing" style="cursor:pointer;">
                 <div class="card h-100">
