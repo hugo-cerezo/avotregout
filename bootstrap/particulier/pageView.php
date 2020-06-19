@@ -33,7 +33,9 @@ foreach ($result as $article) {
         }
     }
 }
-
+if ($_SESSION["user"]->getRank()=='admin'){
+    echo '<button id="addArticle" class="btn btn-light">Ajouter un article</button>';
+}
 if ($cat == 'contact') {
     include('contact.php');
 }
