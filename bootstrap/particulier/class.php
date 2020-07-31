@@ -1,12 +1,13 @@
 <?php
 class user
 {
-    public $id = "1";
-    public $login = "Admin";
-    public $email = "admin@admin.com";
-    public $phone = "0123456789";
-    public $adress = "42 rue du JavaScript";
+    public $id = "";
+    public $login = "";
+    public $email = "";
+    public $phone = "";
+    public $adress = "";
     public $rank = "admin";
+    // Bool check if user is connected
     public $connectState = true;
 
     public function connectBdd()
@@ -18,8 +19,6 @@ class user
     {
         if ($this->connectState == true) {
             return [$this->id, $this->login, $this->email, $this->phone, $this->adress, $this->rank];
-        } else {
-            echo 'merci de vous connectez';
         }
     }
     public function isConnected()
@@ -30,16 +29,12 @@ class user
     {
         if ($this->connectState == true) {
             return $this->rank;
-        } else {
-            echo 'merci de vous connectez';
         }
     }
     public function getId()
     {
         if ($this->connectState == true) {
             return $this->id;
-        } else {
-            echo 'merci de vous connectez';
         }
     }
 
@@ -62,9 +57,8 @@ class user
     }
     public function getConnected()
     {
-        $conn = new PDO("mysql:host=localhost;dbname=avotregout", "root", "");
         $sql = "SELECT * FROM users WHERE mail ='$_POST[mail]'";
-        $result = $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+        $result = $this->connectBdd()->query($sql)->fetch(PDO::FETCH_ASSOC);
         if ($result != NULL) {
             if (password_verify($_POST['mdp'], $result["password"])) {
                 $this->id = $result['id'];
@@ -85,17 +79,15 @@ class user
     public function getRegistered()
     {
         $pass = htmlspecialchars(password_hash($_POST['mdp'], PASSWORD_DEFAULT));
-        $conn = new PDO("mysql:host=localhost;dbname=avotregout", "root", "");
         $sql = "SELECT * FROM users WHERE mail = '$_POST[email]'";
-        $result = $conn->query($sql)->fetch();
+        $result = $this->connectBdd()->query($sql)->fetch();
         $login = htmlspecialchars($_POST['login']);
         $email = htmlspecialchars($_POST['email']);
         $address = htmlspecialchars($_POST['address']);
         $phone = htmlspecialchars($_POST['phone']);
         if ($result == 0) {
-
             $sql = "INSERT INTO `users`(`id`,`login`, `password`, `mail`,`address`,`phone`, `rank`) VALUES (NULL,'$login','$pass','$email','$address','$phone',0)";
-            $conn->query($sql);
+            $this->connectBdd()->query($sql);
             header('location:connexion.php');
         } else {
             echo '<p class="text-center my-5">Adresse déja prise</p>';

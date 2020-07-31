@@ -2,8 +2,10 @@
 include('class.php');
 session_start();
 $cat = $_GET["cat"];
-$sql = "SELECT * FROM `articles` WHERE cat = '$cat' ORDER BY page_order";
-$result = $_SESSION["user"]->connectBDD()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$sth = $_SESSION["user"]->connectBdd()->prepare('SELECT * FROM `articles` WHERE cat = ? ORDER BY ?');
+$sth->execute(array($cat, 'page_order'));
+$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
 foreach ($result as $article) {
     if ($_SESSION['user']->getRank() == "admin") {
         if ($article["page_order"] == 1) {
@@ -33,10 +35,9 @@ foreach ($result as $article) {
         }
     }
 }
-if ($_SESSION["user"]->getRank()=='admin'){
+if ($_SESSION["user"]->getRank() == 'admin') {
     echo '<button id="addArticle" class="btn btn-light">Ajouter un article</button>';
 }
 if ($cat == 'contact') {
     include('contact.php');
 }
-?>

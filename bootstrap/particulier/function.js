@@ -6,7 +6,7 @@ function render() {
         success: (data) => {
             $('#main').empty();
             $('#main').append(data);
-            // Ajout d'article
+            // Modification d'article
             $('.editLink').click(function () {
                 $(this).siblings().each(function () {
                     let text = $(this).text();
@@ -113,6 +113,7 @@ function render() {
                     render();
                 })
             });
+            // Google Analytics
             gtag('config', 'UA-169617593-2', { 'page_path': '/' + cat + '.html' });
         }
     });

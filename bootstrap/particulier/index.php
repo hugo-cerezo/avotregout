@@ -16,6 +16,7 @@ $result = $_SESSION['user']->getNews();
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-169617593-2', {
@@ -31,76 +32,100 @@ $result = $_SESSION['user']->getNews();
     <title>A Vôtre Goût</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
+<style>
+    .card {
+        border: 3px red;
+        border-style: dashed;
+    }
+
+    .shrimp {
+        height: 4rem;
+        position: relative;
+        top: -1rem;
+    }
+</style>
 
 <body>
     <button id="accueil" class="btn btn-light">Accueil</button>
     <button id="contact" class="navLink btn btn-light">Contact</button>
 
-    <main id="main" class="container" style="min-height: 65vh;">
-        <section class="d-flex p-3">
-            <div class="col mb-4 landing" style="cursor:pointer;">
+    <main id="main" class="container-lg" style="min-height: 65vh;">
+        <section class="d-flex flex-column flex-sm-column flex-xs-column flex-lg-row p-3">
+            <div class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4 landing" style="cursor:pointer;">
                 <div class="card h-100">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <img src="src/img/parti.jpg" class="card-img-top" alt="particulier">
                     <div class="card-body">
-                        <h5 class="card-title">Particulier</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex">
+                            <h5 class="card-title">Particulier</h5>
+                            <img class="shrimp" src="src/svg/shrimp.svg" alt="shrimp">
+                        </div>
+                        <p class="card-text">Retrouvez nos prestations réservées aux particuliers.</p>
                     </div>
                 </div>
             </div>
-            <div class="col mb-4 landing" style="cursor:pointer;">
+            <div class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4 landing" style="cursor:pointer;">
                 <div class="card h-100">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <img src="src/img/pro.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Professionnel</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex">
+                            <h5 class="card-title">Professionnel</h5>
+                            <img class="shrimp" src="src/svg/shrimp.svg" alt="shrimp">
+                        </div>
+                        <p class="card-text">Retrouvez nos prestations réservées aux entreprises.</p>
                     </div>
                 </div>
             </div>
-            <div id="evenements" class="col mb-4 navLink" style="cursor:pointer;">
+            <div id="evenements" class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4 navLink" style="cursor:pointer;">
                 <div class="card h-100">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <img src="src/img/event.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Créateur d'évenements</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex">
+                            <h5 class="card-title">Créateur d'évenements</h5>
+                            <img class="shrimp" src="src/svg/shrimp.svg" alt="shrimp">
+                        </div>
+                        <p class="card-text">Retrouvez nos prestations réservées à la restauration évènementielle.</p>
                     </div>
                 </div>
             </div>
-            <div class="col mb-4">
+            <div class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <div class="card h-100">
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <div class="card-body">
                         <h5 class="card-title">Actualitées</h5>
                         <div class="col">
                             <h6>News Facebook</h6>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">Retrouvez nos actualitées Facebook.</p>
                             <?php include('news.php'); ?>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="col mb-4">
+
+        <section class="d-flex flex-column flex-sm-column flex-xs-column flex-lg-row p-3">
+            <div class="col-12 mb-4">
                 <div class="card h-100">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <img src="src/img/galerie.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Galerie</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">Retrouvez nos précédents réalisations en images.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
+
+        <section class="d-flex flex-column flex-sm-column flex-xs-column flex-lg-row p-3">
             <div class="col mb-4">
                 <div class="card h-100">
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <div class="card-body">
                         <h5 class="card-title">Devis</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">Faite votre demande de devis en ligne.</p>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
     <div id="map" class="my-5"></div>
     <footer class="page-footer font-small blue pt-4">
@@ -116,54 +141,13 @@ $result = $_SESSION['user']->getNews();
                 </div>
                 <!-- Grid column -->
                 <hr class="clearfix w-100 d-md-none pb-3">
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
             </div>
-            <!-- Grid row -->
-        </div>
-        <!-- Footer Links -->
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
+            <!-- Footer Links -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
     </footer>
     <script src="function.js"></script>
     <script src="script.js"></script>
