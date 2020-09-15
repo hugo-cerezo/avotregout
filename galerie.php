@@ -9,7 +9,7 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
+  <div class="carousel-inner h-100">
     <div class="carousel-item active">
       <img src="image/Logo_megadestock.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">

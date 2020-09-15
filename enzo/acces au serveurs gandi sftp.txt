@@ -1,0 +1,6 @@
+hote : sftp.sd3.gpaas.net
+identifiant : 2176253
+mdp : terminus1121
+phpmyadmin :   log root
+		mdp none
+doc : https://docs.gandi.net/fr/simple_hosting/gestion_base_donnees/mysql.html
