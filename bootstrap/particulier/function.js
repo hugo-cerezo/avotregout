@@ -1,17 +1,21 @@
 function render() {
+    if (typeof (tri) == 'undefined') {
+        tri = 'none';
+    }
     $.ajax({
         url: 'pageView.php',
         type: 'GET',
-        data: 'cat=' + cat,
+        data: { 'cat': cat, 'tri': tri },
         success: (data) => {
             $('#main').empty();
             $('#main').append(data);
+
             // Modification d'article
             $('.editLink').click(function () {
                 $(this).siblings().each(function () {
                     let text = $(this).text();
                     $(this).empty();
-                    $(this).append('<div style="border: 1px solid black" class="contentEditable" name="" id="" contentEditable><p>' + text + '</p></div>');
+                    $(this).append('<div style="border: 1px solid black"  name="" id="" contenteditable=true><p>' + text + '</p></div>');
                 });
                 $(this).parent().append('<div id="editBox"><button class="col-1 articleup btn btn-light">Up</button><button class="col-1 articledown btn btn-light">Down</button><button id="' + $(this).parent().attr('id') + '" class="editField col-1 btn btn-light">Valider</button><button class="editDelete btn btn-light">Supprimer</button><button class="editCancel col-1 btn btn-light">Annuler</button></div>');
                 // Supression de l'option up & down en fonction de leurs position dans la list
@@ -20,20 +24,22 @@ function render() {
                 } else if ($(this).parents('section').next().attr('value') == undefined) {
                     $('.articledown').remove();
                 }
+
+                //--------------FIX
                 // Déplacement de la section
                 // Objet a déplacer
                 $('.articleup').click(function () {
                     let arr = [];
                     let id = $(this).parents('section').attr('id');
                     let order = $(this).parents('section').attr('value');
-                    let id2 = $(this).parent().parent().prev().attr('id')
+                    let id2 = $(this).parent().parent().prev().attr('id');
                     let order2 = $(this).parent().parent().prev().attr('value');
                     arr.push([id, order, cat], [id2, order2, cat]);
                     // ajax
                     $.ajax({
                         url: 'updateView.php',
                         type: 'POST',
-                        data: { orderUp: arr },
+                        data: { 'orderUp': arr, 'tri': tri },
                         success: () => {
                             render();
                         }
@@ -47,15 +53,19 @@ function render() {
                     let id2 = $(this).parent().parent().next().attr('id')
                     let order2 = $(this).parent().parent().next().attr('value');
                     arr.push([id, order, cat], [id2, order2, cat]);
+                    console.log(arr);
                     $.ajax({
                         url: 'updateView.php',
                         type: 'POST',
-                        data: { orderUp: arr },
-                        success: () => {
+                        data: { 'orderDown': arr, 'tri': tri },
+                        success: (data) => {
+                            console.log(data);
                             render();
                         }
                     })
                 });
+                //-----------------FIX
+
                 // Validation du form
                 $('.editField').click(function () {
                     let arr = [];
@@ -66,7 +76,7 @@ function render() {
                     $.ajax({
                         url: 'updateView.php',
                         type: 'POST',
-                        data: { content: arr },
+                        data: { 'content': arr, 'tri': tri },
                         success: () => {
                             render();
                         }
@@ -83,7 +93,7 @@ function render() {
                     $.ajax({
                         url: 'removeArticle.php',
                         type: 'POST',
-                        data: { 'id': id },
+                        data: { 'id': id, 'tri': tri },
                         success: () => {
                             render();
                         }
@@ -102,7 +112,7 @@ function render() {
                     $.ajax({
                         url: 'addArticle.php',
                         type: 'POST',
-                        data: { content: arr },
+                        data: { 'content': arr, 'tri': tri },
                         success: () => {
                             render();
                         }

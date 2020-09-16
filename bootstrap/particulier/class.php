@@ -40,8 +40,9 @@ class user
 
     public function getNews()
     {
-        $sql = "SELECT * FROM articles WHERE cat = 'news' AND start <= NOW() AND end >= NOW()";
-        $result = $this->connectBdd()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        $sth = $this->connectBdd()->prepare('SELECT * FROM `articles` WHERE cat = ? AND start <= NOW() AND end >= NOW()');
+        $sth->execute(array('news'));
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
     public function disconnect()

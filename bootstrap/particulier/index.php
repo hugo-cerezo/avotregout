@@ -51,7 +51,7 @@ $result = $_SESSION['user']->getNews();
 
     <main id="main" class="container-lg" style="min-height: 65vh;">
         <section class="d-flex flex-column flex-sm-column flex-xs-column flex-lg-row p-3">
-            <div class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4 landing" style="cursor:pointer;">
+            <div class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4 landing" style="cursor:pointer;" id="parti">
                 <div class="card h-100">
                     <img src="src/img/parti.jpg" class="card-img-top" alt="particulier">
                     <div class="card-body">
@@ -63,7 +63,7 @@ $result = $_SESSION['user']->getNews();
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4 landing" style="cursor:pointer;">
+            <div class="col-lg-3 col-sm-12 col-xs-12 col-12 mb-4 landing" style="cursor:pointer;" id="pro">
                 <div class="card h-100">
                     <img src="src/img/pro.jpg" class="card-img-top" alt="...">
                     <div class="card-body">

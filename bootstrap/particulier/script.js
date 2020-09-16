@@ -1,9 +1,11 @@
 $(document).ready(() => {
     // Gestion des vue
     $('.landing').click(function () {
+        tri = $(this).attr("id");
         $.ajax({
             url: 'grid.php',
             type: 'GET',
+            data: { 'cat': tri },
             success: (data) => {
                 $('#main').empty();
                 $('#main').append(data);

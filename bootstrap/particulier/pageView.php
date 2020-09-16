@@ -2,10 +2,10 @@
 include('class.php');
 session_start();
 $cat = $_GET["cat"];
-$sth = $_SESSION["user"]->connectBdd()->prepare('SELECT * FROM `articles` WHERE cat = ? ORDER BY ?');
-$sth->execute(array($cat, 'page_order'));
+$tri = $_GET["tri"];
+$sth = $_SESSION["user"]->connectBdd()->prepare('SELECT * FROM articles' . $tri . ' WHERE cat = ? ORDER BY page_order');
+$sth->execute(array($cat));
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
-
 foreach ($result as $article) {
     if ($_SESSION['user']->getRank() == "admin") {
         if ($article["page_order"] == 1) {
